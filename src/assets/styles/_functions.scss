@@ -1,7 +1,10 @@
+@use "sass:color";
+@use "sass:math";
+
 @function adjust-bg-color($color, $lightness) {
   @if $lightness > 0 {
-    @return lighten($color, $lightness);
+    @return color.adjust($color, $lightness: $lightness);
   } @else {
-    @return darken($color, abs($lightness));
+    @return color.adjust($color, $lightness: - $lightness);
   }
 }
