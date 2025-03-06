@@ -1,0 +1,7 @@
+@function adjust-bg-color($color, $lightness) {
+  @if $lightness > 0 {
+    @return lighten($color, $lightness);
+  } @else {
+    @return darken($color, abs($lightness));
+  }
+}
